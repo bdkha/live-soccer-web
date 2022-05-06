@@ -6,7 +6,7 @@ const BXHmin = () => {
     const [league, setLeague] = useState(2021);
 
     const loadData = async () => {
-        const response = await fetch(`http://api.football-data.org/v2/competitions/${league}/standings`, {
+        const response = await fetch(`https://api.football-data.org/v2/competitions/${league}/standings`, {
             headers: {
                 'X-Auth-Token': '978b34f9c60e4d98a9a5cb6c0c367df7',
             }

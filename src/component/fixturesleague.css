@@ -18,3 +18,10 @@
 .hour-fl {
     font-size: 13px;
 }
+.h2h-score {
+    margin-left: auto;
+    margin-right: 15px;
+}
+.score {
+    font-weight: bold;
+}

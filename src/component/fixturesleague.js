@@ -121,7 +121,7 @@ const MatchCard = ({ data }) => {
           <div className="name">{data.teams.away.name}</div>
         </div>
       </div>
-      <div>
+      <div className="h2h-score">
         <div className="score">{data.goals.home}</div>
         <div className="score">{data.goals.away}</div>
       </div>

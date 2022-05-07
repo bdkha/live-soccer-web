@@ -24,6 +24,11 @@ const Header = () => {
                     className='league-logo' />
             </a>
 
+            <a href='https://www.seriea.com/'>
+                <img src='https://seeklogo.com/images/L/lega-serie-a-logo-F6AA6C64C9-seeklogo.com.png'
+                    className='league-logo' />
+            </a>
+
         </div>
     )
 }

@@ -9,7 +9,6 @@ const Fixtures = () => {
     const milisecondsperday = 86400000;
     const weekdays = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
     const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
-    const dateInputRef = useRef(null);
     const today = new Date();
     const [date, setDate] = useState(today);
     const [dateAPI, setDateAPI] = useState(today);
@@ -28,7 +27,6 @@ const Fixtures = () => {
         setDate(date);
         setButindex(0);
         setDateAPI(date);
-        console.log(date);
         setDatePre1(new Date(date - milisecondsperday));
         setDatePre2(new Date(date - milisecondsperday * 2));
         setDateNext1(new Date(date - -milisecondsperday));
@@ -37,7 +35,7 @@ const Fixtures = () => {
     }
 
     function padTo2(number) {
-        if (number < 10) {
+        if (Math.round(number) < 10) {
             return '0' + number;
         }
         return number;
@@ -108,7 +106,7 @@ const LeagueTitle = ({ img, name, country }) => {
 
 const MatchCard = ({ data }) => {
 
-    const time = data.fixture.status.short == 'NS' ? data.fixture.date.slice(12, 16) : data.fixture.status.short;
+    const time = data.fixture.status.short == 'NS' ? data.fixture.date.slice(11, 16) : data.fixture.status.short;
     return (
         <div className='match-card'>
             <div className='hour'>{time}</div>
@@ -133,36 +131,41 @@ const MatchCard = ({ data }) => {
 
 const LeagueFixtures = ({ id, date }) => {
     const [data, setData] = useState(null);
-    const [dateAPI,setAPI] = useState(date.toISOString().slice(0, 10));
+    
+
     const loadFixtures = async () => {
         var myHeaders = new Headers();
-        myHeaders.append("x-rapidapi-key", `${process.env.REACT_APP_FIXTURES_API_KEY}`);
+        myHeaders.append("x-rapidapi-key", `${process.env.REACT_APP_FIXTURES_API_KEY_1}`);
         myHeaders.append("x-rapidapi-host", "v3.football.api-sports.io");
 
         var requestOptions = {
             method: 'GET',
             headers: myHeaders,
         };
-        console.log(process.env.REACT_APP_FIXTURES_API_KEY);
-        const response = await fetch(`https://v3.football.api-sports.io/fixtures?date=${dateAPI}&league=${id}&season=2021&timezone=Asia/Ho_Chi_Minh`, requestOptions);
+        
+        const response = await fetch(`https://v3.football.api-sports.io/fixtures?date=${date.toISOString().slice(0, 10)}&league=${id}&season=2021&timezone=Asia/Ho_Chi_Minh`, requestOptions);
         const data = await response.json();
+        console.log(data);
         if (data.results > 0) {
             setData(data.response);
+        } else {
+            setData(null);
         }
+
     
     }
     useEffect(() => {
         loadFixtures();
-    }, [dateAPI]);
+    }, [date]);
 
     return (
         <div>
             {data && <LeagueTitle img={data[0].league.flag} name={data[0].league.name} country={data[0].league.country} />}
 
             {
-                data && data.map((item) => {
+                data && data.map((item, index) => {
                     return (
-                        <MatchCard data={item} />
+                        <MatchCard data={item} key={index}/>
                     )
                 })
             }

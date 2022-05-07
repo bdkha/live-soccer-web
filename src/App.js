@@ -1,10 +1,10 @@
-
-import { Link, NavLink, Route, Router, Routes } from 'react-router-dom';
-import './App.css';
-import Header from './component/header';
-import Home from './screen/home';
-import News from './screen/news';
-import Videos from './screen/video';
+import { Link, NavLink, Route, Router, Routes } from "react-router-dom";
+import "./App.css";
+import Header from "./component/header";
+import Home from "./screen/home";
+import News from "./screen/news";
+import Videos from "./screen/video";
+import Leagues from "./screen/leagues";
 
 function App() {
   return (
@@ -13,7 +13,9 @@ function App() {
       <nav>
         <ul>
           <li>
-            <NavLink to="/" activeClassName='active'>Home</NavLink>
+            <NavLink to="/" activeClassName="active">
+              Home
+            </NavLink>
           </li>
           <li>
             <NavLink to="/news">News</NavLink>
@@ -22,18 +24,18 @@ function App() {
             <NavLink to="/videos">Videos</NavLink>
           </li>
           <li>
-            <NavLink to="league">Các giải đấu</NavLink>
+            <NavLink to="/league">Các giải đấu</NavLink>
           </li>
         </ul>
       </nav>
 
-      <div className='main'>
+      <div className="main">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/news" element={<News />} />
-          <Route path='/videos' element={<Videos />} />
+          <Route path="/videos" element={<Videos />} />
+          <Route path="/league" element={<Leagues />} />
         </Routes>
-
       </div>
     </div>
   );

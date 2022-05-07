@@ -46,7 +46,7 @@ const BXHmin = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {data && data.map(item => <Row data={item} />)}
+                        {data && data.map((item, index) => <Row data={item} key={index}/>)}
                     </tbody>
                 </table>
 

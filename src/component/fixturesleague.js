@@ -16,7 +16,7 @@ const FixturesLeague = ({ id }) => {
     var myHeaders = new Headers();
     myHeaders.append(
       "x-rapidapi-key",
-      `${process.env.REACT_APP_FIXTURES_API_KEY_1}`
+      `${process.env.REACT_APP_FIXTURES_API_KEY_2}`
     );
     myHeaders.append("x-rapidapi-host", "v3.football.api-sports.io");
 

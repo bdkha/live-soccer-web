@@ -68,6 +68,7 @@ const Leagues = () => {
             fontWeight: "bold",
             border: "none",
             backgroundColor: "#fff",
+            color: league === 1 ? "orange" : "black",
           }}
           onClick={() => setLeague(1)}
         >
@@ -81,6 +82,7 @@ const Leagues = () => {
             fontWeight: "bold",
             border: "none",
             backgroundColor: "#fff",
+            color: league === 2 ? "orange" : "black",
           }}
           onClick={() => setLeague(2)}
         >
@@ -94,6 +96,7 @@ const Leagues = () => {
             fontWeight: "bold",
             border: "none",
             backgroundColor: "#fff",
+            color: league === 3 ? "orange" : "black",
           }}
           onClick={() => setLeague(3)}
         >
@@ -107,6 +110,7 @@ const Leagues = () => {
             fontWeight: "bold",
             border: "none",
             backgroundColor: "#fff",
+            color: league === 4 ? "orange" : "black",
           }}
           onClick={() => setLeague(4)}
           href="#"
@@ -121,6 +125,7 @@ const Leagues = () => {
             fontWeight: "bold",
             border: "none",
             backgroundColor: "#fff",
+            color: league === 5 ? "orange" : "black",
           }}
           onClick={() => setLeague(5)}
         >

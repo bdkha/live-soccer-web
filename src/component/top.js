@@ -1,12 +1,12 @@
 import "./top.css";
 import { useEffect, useState } from "react";
-const Top = () => {
+const Top = ({ id }) => {
   const [top, setTop] = useState(null);
   const loadTops = async () => {
     var myHeaders = new Headers();
     myHeaders.append(
       "x-rapidapi-key",
-      `${process.env.REACT_APP_FIXTURES_API_KEY_2}`
+      `${process.env.REACT_APP_FIXTURES_API_KEY_1}`
     );
     myHeaders.append("x-rapidapi-host", "v3.football.api-sports.io");
 
@@ -15,7 +15,7 @@ const Top = () => {
       headers: myHeaders,
     };
     const response = await fetch(
-      `https://v3.football.api-sports.io/players/topscorers?league=39&season=2021`,
+      `https://v3.football.api-sports.io/players/topscorers?league=${id}&season=2021`,
       requestOptions
     );
     const data = await response.json();
@@ -25,7 +25,7 @@ const Top = () => {
 
   useEffect(() => {
     loadTops();
-  }, []);
+  }, [id]);
   return (
     <div className="top">
       <div className="header">

@@ -3,11 +3,10 @@ import "./bxh.css";
 
 const BXH = ({ idLeague }) => {
   const [data, setData] = useState(null);
-  const [league, setLeague] = useState(2021);
 
   const loadData = async () => {
     const response = await fetch(
-      `https://api.football-data.org/v2/competitions/${league}/standings`,
+      `https://api.football-data.org/v2/competitions/${idLeague}/standings`,
       {
         headers: {
           "X-Auth-Token": "978b34f9c60e4d98a9a5cb6c0c367df7",
@@ -20,7 +19,7 @@ const BXH = ({ idLeague }) => {
 
   useEffect(() => {
     loadData();
-  }, [league]);
+  }, [idLeague]);
 
   return (
     <div className="bxh">

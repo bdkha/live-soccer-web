@@ -34,7 +34,7 @@ const Header = () => {
       <a href="https://www.seriea.com/">
         <img
           src="https://seeklogo.com/images/L/lega-serie-a-logo-F6AA6C64C9-seeklogo.com.png"
-          className="league-logo"
+          className="header-league-logo"
         />
       </a>
     </div>

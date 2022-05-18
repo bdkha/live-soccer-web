@@ -4,9 +4,9 @@ import Top from "../component/top";
 import { useEffect, useState } from "react";
 
 const Leagues = () => {
-  const [league, setLeague] = useState(null);
-  const [bxhid, setBxhid] = useState(null);
-  const [fixtureid, setFixtureid] = useState(null);
+  const [league, setLeague] = useState(1);
+  const [bxhid, setBxhid] = useState("2021");
+  const [fixtureid, setFixtureid] = useState("39");
 
   const setID = () => {
     switch (league) {
@@ -29,6 +29,7 @@ const Leagues = () => {
       case 5:
         setBxhid("2019");
         setFixtureid("135");
+        break;
       default:
         setBxhid("2021");
         setFixtureid("39");
@@ -63,7 +64,6 @@ const Leagues = () => {
         <button
           style={{
             textDecoration: "none",
-            color: "#111",
             fontSize: "16px",
             fontWeight: "bold",
             border: "none",
@@ -77,7 +77,6 @@ const Leagues = () => {
         <button
           style={{
             textDecoration: "none",
-            color: "#111",
             fontSize: "16px",
             fontWeight: "bold",
             border: "none",
@@ -91,7 +90,6 @@ const Leagues = () => {
         <button
           style={{
             textDecoration: "none",
-            color: "#111",
             fontSize: "16px",
             fontWeight: "bold",
             border: "none",
@@ -105,7 +103,6 @@ const Leagues = () => {
         <button
           style={{
             textDecoration: "none",
-            color: "#111",
             fontSize: "16px",
             fontWeight: "bold",
             border: "none",
@@ -120,7 +117,6 @@ const Leagues = () => {
         <button
           style={{
             textDecoration: "none",
-            color: "#111",
             fontSize: "16px",
             fontWeight: "bold",
             border: "none",

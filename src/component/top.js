@@ -20,7 +20,7 @@ const Top = ({ id }) => {
     );
     const data = await response.json();
     setTop(data.response);
-    console.log(data.response);
+    console.log(data);
   };
 
   useEffect(() => {

@@ -24,7 +24,7 @@ function App() {
             <NavLink to="/videos">Videos</NavLink>
           </li>
           <li>
-            <NavLink to="/league">Các giải đấu</NavLink>
+            <NavLink to="/league">Leagues</NavLink>
           </li>
         </ul>
       </nav>

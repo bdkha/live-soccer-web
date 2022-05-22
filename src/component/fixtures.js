@@ -42,14 +42,15 @@ const Fixtures = () => {
   }
 
   function handleDateChange(e) {
-    let date = new Date(e.target.value);
-    setDate(date);
+    let dateTemp = new Date(e.target.value);
+    console.log(date);
+    setDate(dateTemp);
     setButindex(0);
-    setDateAPI(date);
-    setDatePre1(new Date(date - milisecondsperday));
-    setDatePre2(new Date(date - milisecondsperday * 2));
-    setDateNext1(new Date(date - -milisecondsperday));
-    setDateNext2(new Date(date - -milisecondsperday * 2));
+    setDateAPI(dateTemp);
+    setDatePre1(new Date(dateTemp - milisecondsperday));
+    setDatePre2(new Date(dateTemp - milisecondsperday * 2));
+    setDateNext1(new Date(dateTemp - -milisecondsperday));
+    setDateNext2(new Date(dateTemp - -milisecondsperday * 2));
   }
 
   function padTo2(number) {
